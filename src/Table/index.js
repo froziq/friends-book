@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Row from './Row';
 import Tel from './Tel';
@@ -6,7 +6,7 @@ import Name from './Name';
 import Actions from './Actions';
 import TableWrapper from './TableWrapper';
 
-class Table extends Component {
+class Table extends React.Component {
   render() {
     return (
       <TableWrapper>

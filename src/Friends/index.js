@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Table from '../Table/index';
 import Header from '../Header/index';
 import FriendsWrapper from './FriendsWrapper';
 
-class Friends extends Component {
+class Friends extends React.Component {
   render() {
     return (
       <FriendsWrapper>

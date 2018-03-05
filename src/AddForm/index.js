@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import uuidv1 from 'uuid/v1';
 
 import AddFormWrapper from './AddFormWrapper';
@@ -7,7 +7,7 @@ import Tel from './Tel';
 import Input from './Input';
 import Button from './Button';
 
-class AddForm extends Component {
+class AddForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
