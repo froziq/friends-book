@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import uuidv1 from 'uuid/v1';
 
 import AddFormWrapper from './AddFormWrapper';
@@ -56,5 +57,9 @@ class AddForm extends React.Component {
     );
   }
 }
+
+AddForm.propTypes = {
+  onFriendAdd: PropTypes.func,
+};
 
 export default AddForm;

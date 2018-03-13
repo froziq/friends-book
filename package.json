@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "immutable": "^3.8.2",
+    "immutable": "3.8.2",
+    "prop-types": "^15.6.1",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-router-dom": "4.2.2",
@@ -16,6 +17,63 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npm run lint:eslint -- .",
+    "lint:eslint": "eslint",
+    "lint:staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "lint:eslint"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "react/jsx-filename-extension": 0,
+      "react/require-default-props": 0,
+      "react/forbid-prop-types": 0,
+      "react/jsx-first-prop-new-line": [
+        2,
+        "multiline"
+      ]
+    },
+    "plugins": [
+      "react",
+      "jsx-a11y"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  },
+  "eslintIgnore": ["src/registerServiceWorker.js"],
+  "pre-commit": "lint:staged",
+  "devDependencies": {
+    "babel-eslint": "8.2.2",
+    "eslint": "4.18.2",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-import-resolver-webpack": "0.8.4",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-flowtype": "2.39.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-react": "7.4.0",
+    "lint-staged": "7.0.0",
+    "pre-commit": "^1.2.2"
   }
 }

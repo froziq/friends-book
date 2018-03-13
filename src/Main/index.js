@@ -16,13 +16,13 @@ class Main extends React.Component {
     ids: OrderedSet(),
   }
 
-  handleFriendAdd = ({ name, tel, id}) => {
+  handleFriendAdd = ({ name, tel, id }) => {
     this.setState((prevState) => ({
       friends: prevState.friends.concat(fromJS({
         [id]: {
           name,
           tel,
-        }
+        },
       })),
       ids: prevState.ids.concat(id),
     }));
@@ -31,7 +31,7 @@ class Main extends React.Component {
   handleDelete = (id) => {
     this.setState((prevState) => ({
       friends: prevState.friends.delete(id),
-      ids: prevState.ids.delete(id)
+      ids: prevState.ids.delete(id),
     }));
   }
 
@@ -42,19 +42,25 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log(this.state.friends);
     return (
       <Switch>
-        <Route exact path="/" render={(props) =>
-          <Friends
-            friends={this.state.friends}
-            ids={this.state.ids}
-            onFriendAdd={this.handleFriendAdd}
-            onDelete={this.handleDelete}
-          />}
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Friends
+              friends={this.state.friends}
+              ids={this.state.ids}
+              onFriendAdd={this.handleFriendAdd}
+              onDelete={this.handleDelete}
+            />
+          )}
         />
-        <Route path="/edit/:id" render={(props) =>
-          <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />}
+        <Route
+          path="/edit/:id"
+          render={() =>
+            <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />
+          }
         />
         <Redirect from="/edit" to="/" />
       </Switch>

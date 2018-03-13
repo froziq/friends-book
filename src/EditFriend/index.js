@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
+
+import { Map } from 'immutable';
 
 import Edit from '../ButtonEdit';
 import Reject from '../ButtonReject';
@@ -162,5 +165,12 @@ class EditFriend extends React.Component {
     );
   }
 }
+
+EditFriend.propTypes = {
+  friends: PropTypes.instanceOf(Map),
+  match: PropTypes.object,
+  history: PropTypes.object,
+  onEdit: PropTypes.func,
+};
 
 export default withRouter(EditFriend);

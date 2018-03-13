@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import { Map, OrderedSet } from 'immutable';
 
 import Row from './Row';
 import Tel from './Tel';
@@ -6,7 +9,7 @@ import Name from './Name';
 import Actions from './Actions';
 import TableWrapper from './TableWrapper';
 
-class Table extends React.Component {
+class Table extends React.PureComponent {
   render() {
     return (
       <TableWrapper>
@@ -38,5 +41,11 @@ class Table extends React.Component {
     );
   }
 }
+
+Table.propTypes = {
+  friends: PropTypes.instanceOf(Map),
+  ids: PropTypes.instanceOf(OrderedSet),
+  onDelete: PropTypes.func,
+};
 
 export default Table;
