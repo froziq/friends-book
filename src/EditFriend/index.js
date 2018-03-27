@@ -57,7 +57,7 @@ class EditFriend extends React.Component {
   }
 
   goHome = () => {
-    this.props.history.push('/');
+    this.props.history.push(`${process.env.PUBLIC_URL}/`);
   }
 
   render() {
@@ -69,7 +69,6 @@ class EditFriend extends React.Component {
             <ButtonHome
               type="button"
               onClick={this.goHome}
-              aria-label="Перейти на главную"
             >
               Перейти на главную
             </ButtonHome>
@@ -79,7 +78,6 @@ class EditFriend extends React.Component {
             <ButtonHome
               type="button"
               onClick={this.goHome}
-              aria-label="Перейти на главную"
             >
               Перейти на главную
             </ButtonHome>
@@ -89,7 +87,7 @@ class EditFriend extends React.Component {
                 <React.Fragment>
                   <Input
                     type="text"
-                    value={this.state.editedValue}
+                    defaultValue={this.state.editedValue}
                     onInput={this.handleNameInput}
                     required
                   />
@@ -126,7 +124,7 @@ class EditFriend extends React.Component {
                 <React.Fragment>
                   <Input
                     type="text"
-                    value={this.state.editedValue}
+                    defaultValue={this.state.editedValue}
                     onInput={this.handleTelInput}
                     required
                   />

@@ -42,7 +42,6 @@ class Main extends React.Component {
   }
 
   render() {
-    console.log(this.state.friends);
     return (
       <Switch>
         <Route exact path="/" render={(props) =>
@@ -53,10 +52,10 @@ class Main extends React.Component {
             onDelete={this.handleDelete}
           />}
         />
-        <Route path="/edit/:id" render={(props) =>
+        <Route path={`${process.env.PUBLIC_URL}/edit/:id`} render={(props) =>
           <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />}
         />
-        <Redirect from="/edit" to="/" />
+        <Redirect from={`${process.env.PUBLIC_URL}/edit`} to={`${process.env.PUBLIC_URL}/`} />
       </Switch>
     );
   }
