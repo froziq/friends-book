@@ -111,7 +111,6 @@ class EditFriend extends React.Component {
                     size={22}
                     type="button"
                     onClick={this.handleNameEditClick}
-                    disabled={!this.props.friends.getIn([this.props.match.params.id, 'name'])}
                     aria-label="Редактировать имя"
                   />
                 </React.Fragment>
@@ -148,7 +147,6 @@ class EditFriend extends React.Component {
                     size={22}
                     type="button"
                     onClick={this.handleTelEditClick}
-                    disabled={!this.props.friends.getIn([this.props.match.params.id, 'tel'])}
                     aria-label="Редактировать номер телефона"
                   />
                 </React.Fragment>
