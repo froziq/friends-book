@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {withRouter} from "react-router-dom";
 
-import Edit from '../ButtonEdit';
-import Delete from '../ButtonDelete';
+import Edit from 'ButtonEdit';
+import Delete from 'ButtonDelete';
 
 import ActionsWrapper from './ActionsWrapper';
 

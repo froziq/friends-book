@@ -1,7 +1,7 @@
 import React from 'react';
 
 import HeaderWrapper from './HeaderWrapper';
-import AddForm from '../AddForm';
+import AddForm from 'AddForm';
 
 class Header extends React.Component {
   render() {

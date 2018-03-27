@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-import Button from '../Button';
+import Button from 'Button';
 
 import normal from './normal.svg';
 import hover from './hover.svg';

@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 import { fromJS, OrderedSet } from 'immutable';
 
-import Friends from '../Friends/index';
-import EditFriend from '../EditFriend/index';
+import Friends from 'Friends/index';
+import EditFriend from 'EditFriend/index';
 
 class Main extends React.Component {
   state = {
