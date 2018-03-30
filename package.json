@@ -2,6 +2,7 @@
   "name": "friends-book",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://froziq.github.io/friends-book",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

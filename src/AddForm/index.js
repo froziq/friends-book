@@ -25,6 +25,10 @@ class AddForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({
+      name: '',
+      tel: '',
+    });
     this.props.onFriendAdd({
       name: this.state.name,
       tel: this.state.tel,

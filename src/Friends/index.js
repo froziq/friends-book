@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import { Map, OrderedSet } from 'immutable';
 
-import Table from '../Table/index';
-import Header from '../Header/index';
+import Table from 'Table/index';
+import Header from 'Header/index';
 import FriendsWrapper from './FriendsWrapper';
 
 class Friends extends React.PureComponent {

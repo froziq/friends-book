@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 import { fromJS, OrderedSet } from 'immutable';
 
-import Friends from '../Friends/index';
-import EditFriend from '../EditFriend/index';
+import Friends from 'Friends/index';
+import EditFriend from 'EditFriend/index';
 
 class Main extends React.Component {
   state = {
@@ -46,7 +46,7 @@ class Main extends React.Component {
       <Switch>
         <Route
           exact
-          path="/"
+          path={`${process.env.PUBLIC_URL}/`}
           render={() => (
             <Friends
               friends={this.state.friends}
@@ -57,12 +57,12 @@ class Main extends React.Component {
           )}
         />
         <Route
-          path="/edit/:id"
+          path={`${process.env.PUBLIC_URL}/edit/:id`}
           render={() =>
             <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />
           }
         />
-        <Redirect from="/edit" to="/" />
+        <Redirect from={`${process.env.PUBLIC_URL}/edit`} to={`${process.env.PUBLIC_URL}/`} />
       </Switch>
     );
   }

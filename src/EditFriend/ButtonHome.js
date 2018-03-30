@@ -1,4 +1,4 @@
-import Button from '../Button';
+import Button from 'Button';
 
 const ButtonEdit = Button.extend`
   width: 200px;
