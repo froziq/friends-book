@@ -2,7 +2,10 @@
 
 Project for learn how to develop and deploy application.
 
+## DEMO
+
 In demo bellow you can add friends (Name:Tel) to notebook then edit them or even delete.
+
 [`DEMO`](https://froziq.github.io/friends-book/)
 
 ## Using
