@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {withRouter} from "react-router-dom";
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import Edit from 'ButtonEdit';
 import Delete from 'ButtonDelete';
@@ -24,5 +25,11 @@ class Actions extends Component {
     );
   }
 }
+
+Actions.propTypes = {
+  id: PropTypes.string,
+  history: PropTypes.object,
+  onDelete: PropTypes.func,
+};
 
 export default withRouter(Actions);

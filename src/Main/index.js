@@ -16,13 +16,13 @@ class Main extends React.Component {
     ids: OrderedSet(),
   }
 
-  handleFriendAdd = ({ name, tel, id}) => {
+  handleFriendAdd = ({ name, tel, id }) => {
     this.setState((prevState) => ({
       friends: prevState.friends.concat(fromJS({
         [id]: {
           name,
           tel,
-        }
+        },
       })),
       ids: prevState.ids.concat(id),
     }));
@@ -31,7 +31,7 @@ class Main extends React.Component {
   handleDelete = (id) => {
     this.setState((prevState) => ({
       friends: prevState.friends.delete(id),
-      ids: prevState.ids.delete(id)
+      ids: prevState.ids.delete(id),
     }));
   }
 
@@ -44,16 +44,23 @@ class Main extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path={`${process.env.PUBLIC_URL}/`} render={(props) =>
-          <Friends
-            friends={this.state.friends}
-            ids={this.state.ids}
-            onFriendAdd={this.handleFriendAdd}
-            onDelete={this.handleDelete}
-          />}
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/`}
+          render={() => (
+            <Friends
+              friends={this.state.friends}
+              ids={this.state.ids}
+              onFriendAdd={this.handleFriendAdd}
+              onDelete={this.handleDelete}
+            />
+          )}
         />
-        <Route path={`${process.env.PUBLIC_URL}/edit/:id`} render={(props) =>
-          <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />}
+        <Route
+          path={`${process.env.PUBLIC_URL}/edit/:id`}
+          render={() =>
+            <EditFriend friends={this.state.friends} onEdit={this.handleEdit} />
+          }
         />
         <Redirect from={`${process.env.PUBLIC_URL}/edit`} to={`${process.env.PUBLIC_URL}/`} />
       </Switch>
