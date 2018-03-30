@@ -44,7 +44,7 @@ class Main extends React.Component {
   render() {
     return (
       <Switch>
-        <Route exact path="/" render={(props) =>
+        <Route exact path={`${process.env.PUBLIC_URL}/`} render={(props) =>
           <Friends
             friends={this.state.friends}
             ids={this.state.ids}

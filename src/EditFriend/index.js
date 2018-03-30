@@ -1,9 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import Edit from '../ButtonEdit';
-import Reject from '../ButtonReject';
-import Submit from '../ButtonSubmit';
+import Edit from 'ButtonEdit';
+import Reject from 'ButtonReject';
+import Submit from 'ButtonSubmit';
 
 import EditFriendWrapper from './EditFriendWrapper';
 import InfoField from './InfoField';
