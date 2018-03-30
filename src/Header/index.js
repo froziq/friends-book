@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import HeaderWrapper from './HeaderWrapper';
 import AddForm from 'AddForm';
+import HeaderWrapper from './HeaderWrapper';
 
 class Header extends React.PureComponent {
   render() {

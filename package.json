@@ -30,6 +30,9 @@
         "error",
         "always"
       ],
+      "import/extensions": 0,
+      "import/no-extraneous-dependencies": 0,
+      "import/no-unresolved": 2,
       "react/jsx-filename-extension": 0,
       "react/require-default-props": 0,
       "react/forbid-prop-types": 0,
@@ -49,9 +52,16 @@
       "ecmaFeatures": {
         "jsx": true
       }
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src/"]
+        }
+      }
     }
   },
-  "eslintIgnore": ["src/registerServiceWorker.js"],
+  "eslintIgnore": ["src/registerServiceWorker.js", "node_modules"],
   "pre-commit": "lint:staged",
   "dependencies": {
     "immutable": "3.8.2",
