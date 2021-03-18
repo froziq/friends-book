@@ -21,11 +21,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - shell: bash
-    - run: mkdir -p ~/.ssh/
-    - run: ls
-    - run: ls ~/.ssh
-    - run: echo $sshknownhost > ~/.ssh/known_hosts
-    - run: cat ~/.ssh/known_hosts
-    - run: echo $sshkey > ./file.txt && chmod 600 ./file.txt
-    - run: ssh $sshuser@$sship -i ./file.txt "ls -la"
+
+    - name: all together
+      shell: bash
+      run: |
+        mkdir -p ~/.ssh/
+        ls
+        ls ~/.ssh
+        echo $sshknownhost > ~/.ssh/known_hosts
+        cat ~/.ssh/known_hosts
+        echo $sshkey > ./file.txt && chmod 600 ./file.txt
+        ssh $sshuser@$sship -i ./file.txt "ls -la"
