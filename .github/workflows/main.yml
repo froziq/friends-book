@@ -27,8 +27,8 @@ jobs:
       run: |
         mkdir -p ~/.ssh/
         ls
-        ls ~/.ssh
         echo $sshknownhost > ~/.ssh/known_hosts
         cat ~/.ssh/known_hosts
+        ls ~/.ssh
         echo $sshkey > ./file.txt && chmod 600 ./file.txt
         ssh $sshuser@$sship -i ./file.txt "ls -la"
