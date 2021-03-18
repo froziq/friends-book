@@ -16,16 +16,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Create SSH key
-      run: |
-        mkdir -p ~/.ssh/
-        echo $SSH_KNOWN_HOSTS > ~/.ssh/known_hosts
-      shell: bash
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: 12
+    - run: mkdir -p ~/.ssh/
+    - run: ls
+    - run: ls ~/.ssh
+    - run: echo $sshknownhost > ~/.ssh/known_hosts
     - run: cat ~/.ssh/known_hosts
     - run: echo $sshkey > ./file.txt && chmod 600 ./file.txt
     - run: ssh $sshuser@$sship -i ./file.txt "ls -la"
