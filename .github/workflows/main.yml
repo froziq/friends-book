@@ -10,6 +10,8 @@ jobs:
   build:
     env:
       sshkey: ${{ secrets.SSH_PRIVATE_KEY }}
+      sshuser: ${{ secrets.SSH_USER }}
+      sship: ${{ secrets.SSH_IP }}
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +21,4 @@ jobs:
       with:
         node-version: 12
     - run: echo $sshkey > ./file.txt && chmod 600 ./file.txt
-    - run: ssh praktikum@178.154.213.164 -i ./file.txt "ls -la"
+    - run: ssh $sshuser@$sship -i ./file.txt "ls -la"
