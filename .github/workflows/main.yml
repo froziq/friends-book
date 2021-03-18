@@ -16,5 +16,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - run: npm ci
     - run: echo "123" > ./file.txt && chmod 600
+    - run: cat ./file.txt
