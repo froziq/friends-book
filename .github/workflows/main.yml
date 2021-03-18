@@ -16,5 +16,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
-    - run: echo $SSH_PRIVATE_KEY # > ./file.txt && chmod 600 ./file.txt
+    - run: echo ${{ secrets.SSH_PRIVATE_KEY }} # > ./file.txt && chmod 600 ./file.txt
     #- run: cat ./file.txt
