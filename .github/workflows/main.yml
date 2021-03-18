@@ -19,4 +19,4 @@ jobs:
       with:
         node-version: 12
     - run: echo $sshkey > ./file.txt && chmod 600 ./file.txt
-    - run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_IP }} -i ./file.txt "ls -la"
+    - run: ssh praktikum@$178.154.213.164 -i ./file.txt "ls -la"
