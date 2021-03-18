@@ -12,9 +12,17 @@ jobs:
       sshkey: ${{ secrets.SSH_PRIVATE_KEY }}
       sshuser: ${{ secrets.SSH_USER }}
       sship: ${{ secrets.SSH_IP }}
+      sshknownhost: ${{ secrets.SSH_KNOWN_HOST }}
     runs-on: ubuntu-latest
 
     steps:
+    - name: Create SSH key
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$SSH_PRIVATE_KEY" > ../private.key
+        sudo chmod 600 ../private.key
+        echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+      shell: bash
     - uses: actions/checkout@v2
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
